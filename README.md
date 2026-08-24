@@ -1,31 +1,16 @@
-# LeipzigCraft – Logo + Marquee Update
+# LeipzigCraft Header Fix
 
-Dieses Paket ersetzt die bisherigen Dateien vollständig.
+Ersetze auf GitHub:
+- index.html
+- styles.css
 
-## Hochladen / ersetzen
+script.js kann unverändert bleiben; die index.html lädt ihn mit einer Versionsnummer neu.
 
-Im Hauptverzeichnis:
+Was geändert wurde:
+- Header ist auf 78 px begrenzt.
+- Logo ist hart auf maximal 62 px Höhe / 145 px Breite begrenzt.
+- Zusätzliche Inline-Grenzen verhindern ein riesiges Logo selbst dann, wenn CSS kurz gecacht wird.
+- styles.css und script.js bekommen Cache-Busting (`?v=4`).
+- Logo bekommt ebenfalls Cache-Busting (`?v=2`).
 
-- `index.html`
-- `styles.css`
-- `script.js`
-
-Zusätzlich muss dieser Ordner ins Repository:
-
-- `assets/leipzigcraft-logo.png`
-
-Deinen vorhandenen `downloads`-Ordner nicht löschen.
-
-## Wichtig
-
-Bitte die neue `styles.css` wirklich komplett verwenden und nicht nur unten an die alte Datei anhängen.
-
-Der alte Ticker verwendete Klassen wie `.ticker`. Diese Version verwendet absichtlich komplett neue Klassen (`.lc-marquee...`), damit keine alten CSS-Regeln mehr dazwischenfunken.
-
-Der neue Lauftext:
-- wird per JavaScript so oft geklont, dass auch breite Monitore gefüllt sind,
-- bewegt sich exakt um die Breite einer Gruppe,
-- springt dadurch nicht sichtbar zurück,
-- benutzt nur eine einzige laufende Browser-Animation.
-
-Das Logo stammt aus der bereits in dieser Unterhaltung erzeugten transparenten Version.
+Danach GitHub Pages kurz deployen lassen und die Seite normal neu laden.
