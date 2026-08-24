@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LeipzigCraft – Dein modded Minecraft-Abenteuer. Launcher laden, installieren und losspielen." />
+  <meta name="description" content="LeipzigCraft – Dein modded Minecraft-Abenteuer." />
   <title>LeipzigCraft – Modded Minecraft Server</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +15,8 @@
 
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="LeipzigCraft Startseite">
-      <span class="brand-mark">LC</span>
-      <span class="brand-text">LEIPZIG<span>CRAFT</span></span>
+    <a class="brand brand-logo" href="#top" aria-label="LeipzigCraft Startseite">
+      <img src="assets/leipzigcraft-logo.png" alt="LeipzigCraft Logo">
     </a>
 
     <button class="nav-toggle" aria-label="Navigation öffnen" aria-expanded="false">☰</button>
@@ -29,9 +28,11 @@
       <a href="#community">Community</a>
     </nav>
 
-    <a class="header-download launcher-download is-disabled"
-       href="downloads/LeipzigCraft-Launcher.exe"
-       aria-disabled="true">
+    <a
+      class="header-download launcher-download is-disabled"
+      href="downloads/LeipzigCraft-Launcher.exe"
+      aria-disabled="true"
+    >
       Launcher noch in Arbeit
     </a>
   </header>
@@ -56,21 +57,29 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary launcher-download is-disabled"
-             href="downloads/LeipzigCraft-Launcher.exe"
-             aria-disabled="true">
+          <a
+            class="btn btn-primary launcher-download is-disabled"
+            href="downloads/LeipzigCraft-Launcher.exe"
+            aria-disabled="true"
+          >
             ⏳ Launcher noch in Arbeit
           </a>
 
-          <a class="btn btn-secondary" href="#start">So funktioniert's</a>
+          <a class="btn btn-secondary" href="#start">
+            So funktioniert's
+          </a>
         </div>
 
-        <div class="launcher-status is-offline"
-             id="launcher-status"
-             role="status"
-             aria-live="polite">
+        <div
+          class="launcher-status is-offline"
+          id="launcher-status"
+          role="status"
+          aria-live="polite"
+        >
           <span class="launcher-status-dot"></span>
-          <span id="launcher-status-text">Launcher befindet sich aktuell noch in Arbeit.</span>
+          <span id="launcher-status-text">
+            Launcher befindet sich aktuell noch in Arbeit.
+          </span>
         </div>
 
         <div class="hero-meta">
@@ -104,29 +113,20 @@
       </aside>
     </section>
 
-    <!-- Echter nahtloser Marquee: zwei identische Gruppen -->
-    <section class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <div class="ticker-group">
-          <span>LEIPZIGCRAFT ✦</span>
-          <span>MODDED SURVIVAL ✦</span>
-          <span>COMMUNITY ✦</span>
-          <span>CUSTOM LAUNCHER ✦</span>
-          <span>LEIPZIGCRAFT ✦</span>
-          <span>MODDED SURVIVAL ✦</span>
-          <span>COMMUNITY ✦</span>
-          <span>CUSTOM LAUNCHER ✦</span>
-        </div>
-
-        <div class="ticker-group" aria-hidden="true">
-          <span>LEIPZIGCRAFT ✦</span>
-          <span>MODDED SURVIVAL ✦</span>
-          <span>COMMUNITY ✦</span>
-          <span>CUSTOM LAUNCHER ✦</span>
-          <span>LEIPZIGCRAFT ✦</span>
-          <span>MODDED SURVIVAL ✦</span>
-          <span>COMMUNITY ✦</span>
-          <span>CUSTOM LAUNCHER ✦</span>
+    <!-- Neuer Marquee. Keine alten .ticker-Klassen mehr. -->
+    <section class="lc-marquee" aria-label="LeipzigCraft Features">
+      <div class="lc-marquee-viewport">
+        <div class="lc-marquee-track" id="lc-marquee-track">
+          <div class="lc-marquee-group" id="lc-marquee-source">
+            <span>LEIPZIGCRAFT ✦</span>
+            <span>MODDED SURVIVAL ✦</span>
+            <span>COMMUNITY ✦</span>
+            <span>CUSTOM LAUNCHER ✦</span>
+            <span>LEIPZIGCRAFT ✦</span>
+            <span>MODDED SURVIVAL ✦</span>
+            <span>COMMUNITY ✦</span>
+            <span>CUSTOM LAUNCHER ✦</span>
+          </div>
         </div>
       </div>
     </section>
@@ -185,9 +185,12 @@
           <span class="step-index">1</span>
           <h3>Launcher laden</h3>
           <p>Lade die aktuelle Windows-Version direkt über diese Website herunter.</p>
-          <a class="launcher-download inline-download is-disabled"
-             href="downloads/LeipzigCraft-Launcher.exe"
-             aria-disabled="true">
+
+          <a
+            class="launcher-download inline-download is-disabled"
+            href="downloads/LeipzigCraft-Launcher.exe"
+            aria-disabled="true"
+          >
             Launcher noch in Arbeit
           </a>
         </article>
@@ -215,9 +218,11 @@
           </p>
         </div>
 
-        <a class="btn btn-gold launcher-download is-disabled"
-           href="downloads/LeipzigCraft-Launcher.exe"
-           aria-disabled="true">
+        <a
+          class="btn btn-gold launcher-download is-disabled"
+          href="downloads/LeipzigCraft-Launcher.exe"
+          aria-disabled="true"
+        >
           ⏳ Launcher noch in Arbeit
         </a>
       </div>
@@ -266,12 +271,13 @@
   </main>
 
   <footer class="footer">
-    <div class="brand footer-brand">
-      <span class="brand-mark">LC</span>
-      <span class="brand-text">LEIPZIG<span>CRAFT</span></span>
-    </div>
+    <a class="footer-logo" href="#top" aria-label="Zurück nach oben">
+      <img src="assets/leipzigcraft-logo.png" alt="LeipzigCraft">
+    </a>
 
-    <p>LeipzigCraft ist ein unabhängiges Community-Projekt und nicht mit Mojang Studios oder Microsoft verbunden.</p>
+    <p>
+      LeipzigCraft ist ein unabhängiges Community-Projekt und nicht mit Mojang Studios oder Microsoft verbunden.
+    </p>
 
     <div class="footer-links">
       <a href="#">Impressum</a>

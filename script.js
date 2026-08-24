@@ -1,5 +1,7 @@
 const LAUNCHER_PATH = "downloads/LeipzigCraft-Launcher.exe";
 
+/* ===== Mobile Navigation ===== */
+
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".nav");
 
@@ -20,11 +22,15 @@ if (navToggle && nav) {
   });
 }
 
+/* ===== Footer Year ===== */
+
 const year = document.getElementById("year");
 
 if (year) {
   year.textContent = new Date().getFullYear();
 }
+
+/* ===== Launcher availability ===== */
 
 const downloadButtons = document.querySelectorAll(".launcher-download");
 const launcherStatus = document.getElementById("launcher-status");
@@ -34,15 +40,10 @@ const downloadPanelNote = document.getElementById("download-panel-note");
 function blockUnavailableDownload(event) {
   event.preventDefault();
 
-  if (!launcherStatus) {
-    return;
-  }
+  if (!launcherStatus) return;
 
   launcherStatus.classList.remove("launcher-status-pulse");
-
-  // Reflow absichtlich nur bei Klick, damit die kleine Animation neu startet.
   void launcherStatus.offsetWidth;
-
   launcherStatus.classList.add("launcher-status-pulse");
 }
 
@@ -86,7 +87,6 @@ function setLauncherAvailable() {
     button.setAttribute("aria-disabled", "false");
     button.setAttribute("href", LAUNCHER_PATH);
     button.setAttribute("download", "");
-
     button.removeEventListener("click", blockUnavailableDownload);
 
     if (button.classList.contains("inline-download")) {
@@ -115,11 +115,6 @@ function setLauncherAvailable() {
 }
 
 async function launcherExists() {
-  /*
-    Nur eine einzige kleine HEAD-Anfrage beim Laden der Seite.
-    Die EXE selbst wird dabei NICHT heruntergeladen.
-    Das ist sehr ressourcenschonend.
-  */
   try {
     const response = await fetch(
       `${LAUNCHER_PATH}?availability-check=${Date.now()}`,
@@ -146,3 +141,77 @@ async function initializeLauncherDownload() {
 }
 
 initializeLauncherDownload();
+
+/* ===== Robust, seamless marquee ===== */
+
+const marqueeTrack = document.getElementById("lc-marquee-track");
+const marqueeSource = document.getElementById("lc-marquee-source");
+
+let marqueeAnimation = null;
+let marqueeResizeTimer = null;
+
+function buildMarquee() {
+  if (!marqueeTrack || !marqueeSource) return;
+
+  if (marqueeAnimation) {
+    marqueeAnimation.cancel();
+    marqueeAnimation = null;
+  }
+
+  marqueeTrack
+    .querySelectorAll(".lc-marquee-group-clone")
+    .forEach((clone) => clone.remove());
+
+  /*
+    Wir klonen die Gruppe so oft, bis mindestens mehrere Bildschirmbreiten
+    gefüllt sind. Dadurch gibt es selbst auf sehr breiten Monitoren keine Lücke.
+  */
+  const viewportWidth = window.innerWidth;
+  const sourceWidth = marqueeSource.getBoundingClientRect().width;
+
+  if (!sourceWidth) return;
+
+  const neededCopies = Math.max(
+    2,
+    Math.ceil((viewportWidth * 2.5) / sourceWidth)
+  );
+
+  for (let i = 0; i < neededCopies; i++) {
+    const clone = marqueeSource.cloneNode(true);
+    clone.removeAttribute("id");
+    clone.classList.add("lc-marquee-group-clone");
+    clone.setAttribute("aria-hidden", "true");
+    marqueeTrack.appendChild(clone);
+  }
+
+  /*
+    Exakt die Breite EINER Gruppe bewegen.
+    Beim Ende liegt die nächste identische Gruppe pixelgenau an derselben Stelle.
+    Deshalb gibt es keinen sichtbaren Sprung.
+  */
+  marqueeAnimation = marqueeTrack.animate(
+    [
+      { transform: "translate3d(0, 0, 0)" },
+      { transform: `translate3d(-${sourceWidth}px, 0, 0)` }
+    ],
+    {
+      duration: 15000,
+      iterations: Infinity,
+      easing: "linear"
+    }
+  );
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    marqueeAnimation.pause();
+  }
+}
+
+buildMarquee();
+
+window.addEventListener("resize", () => {
+  clearTimeout(marqueeResizeTimer);
+
+  marqueeResizeTimer = setTimeout(() => {
+    buildMarquee();
+  }, 180);
+});
