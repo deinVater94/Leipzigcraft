@@ -1,0 +1,49 @@
+/* ===== NAHTLOSER TICKER FIX ===== */
+/* Ersetzt die bisherigen .ticker / .ticker div / @keyframes marquee Regeln */
+
+.ticker {
+  overflow: hidden;
+  width: 100%;
+  padding: 14px 0;
+  color: #15180f;
+  background: var(--green-bright);
+  font-family: Anton, Impact, sans-serif;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: ticker-scroll 24s linear infinite;
+}
+
+.ticker-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 18px;
+  padding-right: 18px;
+}
+
+.ticker-group span {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
