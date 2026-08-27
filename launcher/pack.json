@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "version": "0.2.2",
+  "version": "0.2.4",
   "minecraft": "1.21",
-  "fabricLoader": "0.18.4",
+  "fabricLoader": "0.17.3",
   "files": [
     {
       "path": "mods/armourersworkshop-fabric-1.21-3.0.0-beta.20.jar",
@@ -234,8 +234,8 @@
     }
   ],
   "configArchive": {
-    "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/319172bf6918-LeipzigCraft-config.zip",
-    "sha256": "319172BF6918E93023D5DAB18BE1F95875E3772653AAADEBEEE3CE0F6ABF1ED2",
+    "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.4/283ac5f4c670-LeipzigCraft-config.zip",
+    "sha256": "283AC5F4C67076776FFCB0A713D07743E621B026B16286E5473C08BCF5D60A69",
     "size": 60059,
     "extractTo": "config"
   }
