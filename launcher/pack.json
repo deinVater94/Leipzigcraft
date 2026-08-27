@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "version": "0.2.0",
+  "version": "0.2.2",
   "minecraft": "1.21",
   "fabricLoader": "0.18.4",
   "files": [
@@ -15,6 +15,12 @@
       "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.0/b7945cb17026-audioplayer-fabric-1.21.1-1.13.2.jar",
       "sha256": "B7945CB17026E6D79408D6E56E4C51ABB43C27405DA98DDB03DAEFAF566782B1",
       "size": 791232
+    },
+    {
+      "path": "mods/collective-1.21.1-8.25.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/f66daf378f7a-collective-1.21.1-8.25.jar",
+      "sha256": "F66DAF378F7A6747AC3B8E601D62FF571FC9F7F2D11B9FB6FAE69DE33B39F62E",
+      "size": 988681
     },
     {
       "path": "mods/CustomNPCs-Unofficial-Fabric-1.21.1.20241204.jar",
@@ -65,10 +71,46 @@
       "size": 77816
     },
     {
-      "path": "mods/gang-server-stats-1.0.0.jar",
-      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.0/159abfa47225-gang-server-stats-1.0.0.jar",
-      "sha256": "159ABFA472250C9CC4AB7A0FD15A83D5426BF536DC3E4CE0B6F45596BBA4C212",
-      "size": 33460
+      "path": "mods/gang-dynamic-npc-trader-1.1.1.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/9e4de2537576-gang-dynamic-npc-trader-1.1.1.jar",
+      "sha256": "9E4DE2537576B94A9C3369F168DFC62CECF8D7D95FB2937C26E8F4C9F1250F43",
+      "size": 37006
+    },
+    {
+      "path": "mods/gang-global-marketplace-1.2.2.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/ead9fd813ce1-gang-global-marketplace-1.2.2.jar",
+      "sha256": "EAD9FD813CE1DFCB54FDB4F4212C9DB94ECB6E95C5E1482594A370F0124294F8",
+      "size": 69831
+    },
+    {
+      "path": "mods/gang-npc-hud-1.0.3.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/10c87ae55056-gang-npc-hud-1.0.3.jar",
+      "sha256": "10C87AE55056DA77D1C1DDDEADFC5835B84B497682E60101DC8A8082A8461006",
+      "size": 12349
+    },
+    {
+      "path": "mods/gang-npc-party-level-gate-1.0.0.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/00768fa3dc6a-gang-npc-party-level-gate-1.0.0.jar",
+      "sha256": "00768FA3DC6A0810126AD19664BFD55A7D1B9C70BEC3BADE275487E17ABC55E1",
+      "size": 18661
+    },
+    {
+      "path": "mods/gang-party-claims-1.0.0.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/812d48ca5f1a-gang-party-claims-1.0.0.jar",
+      "sha256": "812D48CA5F1AC93E0AFA175107950C5F1A847D2E265564D40D35299645D871C2",
+      "size": 5510
+    },
+    {
+      "path": "mods/gang-party-level-xp-1.0.5.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/464abbc47de6-gang-party-level-xp-1.0.5.jar",
+      "sha256": "464ABBC47DE6C05E870157FCC1ECED715D27D7124C547CC800A41BAE05C68C6C",
+      "size": 43957
+    },
+    {
+      "path": "mods/gang-server-stats-1.1.0.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/2c259cb466ec-gang-server-stats-1.1.0.jar",
+      "sha256": "2C259CB466EC02028DDF7490803A1424EACB72F818E4A3A516BF528BC0173AB9",
+      "size": 45899
     },
     {
       "path": "mods/gang-street-map-0.1.0.jar",
@@ -105,6 +147,12 @@
       "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.0/40e770de3809-LuckPerms-Fabric-5.4.139.jar",
       "sha256": "40E770DE38099D85CE66E695A78E73D23CD11F502BE7A159C26E289C9CC112D4",
       "size": 1574861
+    },
+    {
+      "path": "mods/mts-worldborder-guard-1.0.1.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/06dc74619616-mts-worldborder-guard-1.0.1.jar",
+      "sha256": "06DC74619616ABAD473AEA4819CFCDF33C4E7A10B895B4009AB4E4B4DCBE259D",
+      "size": 11202
     },
     {
       "path": "mods/New_Cars4.4-1.21-26.1-Fabric-private.jar",
@@ -186,9 +234,9 @@
     }
   ],
   "configArchive": {
-    "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.0/24845bb5c9bb-LeipzigCraft-config.zip",
-    "sha256": "24845BB5C9BB2484B9199729185471FDC1BE41B0BAF133DCBDCA111B5A3FE3DB",
-    "size": 57401,
+    "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/319172bf6918-LeipzigCraft-config.zip",
+    "sha256": "319172BF6918E93023D5DAB18BE1F95875E3772653AAADEBEEE3CE0F6ABF1ED2",
+    "size": 60059,
     "extractTo": "config"
   }
 }
