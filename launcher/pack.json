@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "version": "0.2.4",
+  "version": "0.2.5",
   "minecraft": "1.21",
   "fabricLoader": "0.17.3",
   "files": [
@@ -252,9 +252,9 @@
     }
   ],
   "configArchive": {
-    "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.4/aa184a499e58-LeipzigCraft-config.zip",
-    "sha256": "AA184A499E5809F6E487A370EAC6DEDCDD25F5618C1ABFBF62759FA9F083D723",
-    "size": 60414,
+    "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.5/2faf6f3095d9-LeipzigCraft-config.zip",
+    "sha256": "2FAF6F3095D9298DE0F6190300CFF4B49D95D6403AF1A86479B81ECC8C7C3A16",
+    "size": 60415,
     "extractTo": "config"
   }
 }
