@@ -54,9 +54,9 @@
     },
     {
       "path": "mods/gambo-gambling-1.0.0.jar",
-      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.0/e2efc579c203-gambo-gambling-1.0.0.jar",
-      "sha256": "E2EFC579C2034DE850F88049C0C40524A1E58E613AA11B6DC1B7F41E05189109",
-      "size": 478613
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.4/d4d09612a2a4-gambo-gambling-1.0.0.jar",
+      "sha256": "D4D09612A2A401627688083BB35751DACF51FF3A158EF926CF2E7A7C2EB32302",
+      "size": 621040
     },
     {
       "path": "mods/gang-c4-addon-1.0.1.jar",
@@ -83,6 +83,12 @@
       "size": 69831
     },
     {
+      "path": "mods/gang-global-marketplace-1.2.3.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.4/338afb9fbfab-gang-global-marketplace-1.2.3.jar",
+      "sha256": "338AFB9FBFAB6347370EE8C43A109159183FCEE56072D090AD95244605640E17",
+      "size": 68991
+    },
+    {
       "path": "mods/gang-npc-hud-1.0.3.jar",
       "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/10c87ae55056-gang-npc-hud-1.0.3.jar",
       "sha256": "10C87AE55056DA77D1C1DDDEADFC5835B84B497682E60101DC8A8082A8461006",
@@ -105,6 +111,18 @@
       "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.2/464abbc47de6-gang-party-level-xp-1.0.5.jar",
       "sha256": "464ABBC47DE6C05E870157FCC1ECED715D27D7124C547CC800A41BAE05C68C6C",
       "size": 43957
+    },
+    {
+      "path": "mods/gang-party-level-xp-1.0.6.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.4/51a73355984d-gang-party-level-xp-1.0.6.jar",
+      "sha256": "51A73355984D15C6A50DA60716C67BF32B8BE68B2F5BB2ADC31AE634492BEC70",
+      "size": 43978
+    },
+    {
+      "path": "mods/gang-party-milestones-1.0.2.jar",
+      "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.4/c98f285c1e72-gang-party-milestones-1.0.2.jar",
+      "sha256": "C98F285C1E728422263A357EA778324807D798FB0D84D60D4C48F001B073D505",
+      "size": 56141
     },
     {
       "path": "mods/gang-server-stats-1.1.0.jar",
@@ -234,9 +252,9 @@
     }
   ],
   "configArchive": {
-    "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.4/283ac5f4c670-LeipzigCraft-config.zip",
-    "sha256": "283AC5F4C67076776FFCB0A713D07743E621B026B16286E5473C08BCF5D60A69",
-    "size": 60059,
+    "url": "https://github.com/deinVater94/LeipzigCraft-Launcher/releases/download/pack-v0.2.4/aa184a499e58-LeipzigCraft-config.zip",
+    "sha256": "AA184A499E5809F6E487A370EAC6DEDCDD25F5618C1ABFBF62759FA9F083D723",
+    "size": 60414,
     "extractTo": "config"
   }
 }
