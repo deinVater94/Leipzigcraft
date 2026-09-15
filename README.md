@@ -14,3 +14,19 @@ Was geändert wurde:
 - Logo bekommt ebenfalls Cache-Busting (`?v=2`).
 
 Danach GitHub Pages kurz deployen lassen und die Seite normal neu laden.
+
+
+## Website-Medien
+
+Für die beiden Website-Videos nur diese Dateien hochladen:
+
+- `assets/videos/server-trailer.mp4`
+- `assets/videos/manual-setup.mp4`
+
+Für die manuelle Installation ohne Launcher:
+
+- `downloads/LeipzigCraft-Manuell.zip` (mit `mods/` und `config/`)
+
+Discord-Einladungslink: `https://discord.gg/8r9J8AR6aV`
+
+Minecraft-Server: `185.9.104.131:10100`

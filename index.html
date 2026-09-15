@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 
 <body>
@@ -26,6 +26,7 @@
       <a href="#start">Loslegen</a>
       <a href="#faq">FAQ</a>
       <a href="#community">Community</a>
+      <a class="nav-join" href="#start">Jetzt joinen</a>
     </nav>
 
     <a
@@ -99,12 +100,24 @@
 
         <p class="world-label">LEIPZIGCRAFT WORLD</p>
 
-        <div class="world-preview">
-          <div class="block block-1"></div>
-          <div class="block block-2"></div>
-          <div class="block block-3"></div>
-          <div class="block block-4"></div>
-          <div class="floating-badge">MODDED<br>MINECRAFT</div>
+        <div class="world-preview trailer-preview" data-video-shell>
+          <video
+            class="site-video trailer-video"
+            controls
+            playsinline
+            preload="metadata"
+            aria-label="LeipzigCraft Servertrailer"
+          >
+            <source src="assets/videos/server-trailer.mp4" type="video/mp4">
+          </video>
+
+          <div class="video-placeholder" aria-hidden="true">
+            <span class="video-placeholder-kicker">SERVERTRAILER</span>
+            <strong>Video folgt</strong>
+            <small>assets/videos/server-trailer.mp4</small>
+          </div>
+
+          <div class="floating-badge">SERVER<br>TRAILER</div>
         </div>
 
         <div class="server-stats">
@@ -229,6 +242,98 @@
           ⏳ Launcher noch in Arbeit
         </a>
       </div>
+
+      <section class="manual-setup" id="manual-setup" aria-labelledby="manual-setup-title">
+        <div class="manual-setup-head">
+          <div>
+            <p class="eyebrow">OHNE LAUNCHER</p>
+            <h3 id="manual-setup-title">Lieber selbst installieren?</h3>
+            <p>Kein Problem. Wähle Performance für maximale FPS oder High Quality mit Shader-Engine.</p>
+          </div>
+        </div>
+
+        <div class="manual-download-choices" aria-label="Manuelle LeipzigCraft Downloads">
+          <article class="manual-download-card">
+            <div>
+              <span class="manual-download-badge">PERFORMANCE</span>
+              <strong>Ohne Shader-Engine</strong>
+              <p>Empfohlen für schwächere PCs und maximale FPS.</p>
+            </div>
+            <a
+              class="btn btn-secondary manual-pack-download is-disabled"
+              data-manual-pack="performance"
+              href="downloads/LeipzigCraft-Manuell-Performance.zip"
+              aria-disabled="true"
+            >
+              Performance folgt
+            </a>
+          </article>
+
+          <article class="manual-download-card manual-download-card-hq">
+            <div>
+              <span class="manual-download-badge">HIGH QUALITY</span>
+              <strong>Mit Shader-Engine</strong>
+              <p>Gleicher Server-Pack, zusätzlich vorbereitet für bessere Grafik.</p>
+            </div>
+            <a
+              class="btn btn-primary manual-pack-download is-disabled"
+              data-manual-pack="high-quality"
+              href="downloads/LeipzigCraft-Manuell-HighQuality.zip"
+              aria-disabled="true"
+            >
+              High Quality folgt
+            </a>
+          </article>
+        </div>
+
+        <div class="manual-setup-grid">
+          <div class="manual-video-shell" data-video-shell>
+            <video
+              class="site-video manual-video"
+              controls
+              playsinline
+              preload="metadata"
+              aria-label="LeipzigCraft manuelle Installation Schritt für Schritt"
+            >
+              <source src="assets/videos/manual-setup.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-placeholder" aria-hidden="true">
+              <span class="video-placeholder-kicker">STEP BY STEP</span>
+              <strong>Video folgt</strong>
+              <small>assets/videos/manual-setup.mp4</small>
+            </div>
+          </div>
+
+          <ol class="manual-steps">
+            <li>
+              <strong>Minecraft Java 1.21 einmal starten.</strong>
+              <span>Danach Minecraft wieder schließen.</span>
+            </li>
+            <li>
+              <strong>Fabric exakt auf 0.17.3 installieren.</strong>
+              <span>Version <b>1.21</b> + Loader <b>0.17.3</b>. Andere Loader-Versionen funktionieren mit dem Pack nicht. <a href="https://fabricmc.net/use/installer/" target="_blank" rel="noopener noreferrer">Fabric Installer ↗</a></span>
+            </li>
+            <li>
+              <strong>Download wählen & kopieren.</strong>
+              <span>Performance oder High Quality herunterladen, ZIP entpacken und <code>mods</code> + <code>config</code> nach <code>%APPDATA%\.minecraft</code> kopieren.</span>
+            </li>
+            <li>
+              <strong>Fabric-Profil starten.</strong>
+              <span>Dann Mehrspieler öffnen und LeipzigCraft beitreten.</span>
+            </li>
+          </ol>
+        </div>
+
+        <div class="server-connect">
+          <div>
+            <span class="server-connect-label">MINECRAFT SERVER</span>
+            <strong>Direkt verbinden</strong>
+          </div>
+          <code id="server-address">185.9.104.131:10100</code>
+          <button class="copy-server-button" type="button" data-copy-server>IP kopieren</button>
+        </div>
+      </section>
     </section>
 
     <section class="section faq-section" id="faq">
@@ -267,7 +372,13 @@
         <p>Finde Mitspieler, plane deine nächsten Schritte und bleib bei Updates, Events und neuen Features auf dem Laufenden.</p>
       </div>
 
-      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
+      <a
+        class="btn btn-primary"
+        href="https://discord.gg/8r9J8AR6aV"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-discord-link
+      >
         Discord beitreten
       </a>
     </section>
@@ -291,6 +402,6 @@
     <p class="copyright">© <span id="year"></span> LeipzigCraft</p>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

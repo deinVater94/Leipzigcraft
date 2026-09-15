@@ -1,4 +1,18 @@
 const LAUNCHER_PATH = "downloads/LeipzigCraft-Launcher.exe";
+const MANUAL_PACKS = {
+  performance: {
+    path: "downloads/LeipzigCraft-Manuell-Performance.zip",
+    readyText: "⬇ Performance herunterladen",
+    missingText: "Performance folgt"
+  },
+  "high-quality": {
+    path: "downloads/LeipzigCraft-Manuell-HighQuality.zip",
+    readyText: "⬇ High Quality herunterladen",
+    missingText: "High Quality folgt"
+  }
+};
+const DISCORD_URL = "https://discord.gg/8r9J8AR6aV";
+const SERVER_ADDRESS = "185.9.104.131:10100";
 
 /* ===== Mobile Navigation ===== */
 
@@ -141,6 +155,101 @@ async function initializeLauncherDownload() {
 }
 
 initializeLauncherDownload();
+
+
+
+/* ===== Discord links ===== */
+
+document.querySelectorAll("[data-discord-link]").forEach((link) => {
+  link.setAttribute("href", DISCORD_URL);
+  link.setAttribute("target", "_blank");
+  link.setAttribute("rel", "noopener noreferrer");
+});
+
+/* ===== Optional website videos ===== */
+
+document.querySelectorAll("[data-video-shell]").forEach((shell) => {
+  const video = shell.querySelector("video");
+  if (!video) return;
+
+  const markReady = () => shell.classList.add("has-video");
+
+  if (video.readyState >= 1) {
+    markReady();
+  } else {
+    video.addEventListener("loadedmetadata", markReady, { once: true });
+  }
+});
+
+/* ===== Manual modpack downloads ===== */
+
+const manualPackButtons = document.querySelectorAll(".manual-pack-download[data-manual-pack]");
+
+function setManualPackState(button, pack, available) {
+  if (available) {
+    button.classList.remove("is-disabled");
+    button.setAttribute("aria-disabled", "false");
+    button.setAttribute("href", pack.path);
+    button.setAttribute("download", "");
+    button.textContent = pack.readyText;
+    return;
+  }
+
+  button.classList.add("is-disabled");
+  button.setAttribute("aria-disabled", "true");
+  button.removeAttribute("download");
+  button.textContent = pack.missingText;
+}
+
+async function initializeManualPackDownloads() {
+  if (!manualPackButtons.length) return;
+
+  await Promise.all([...manualPackButtons].map(async (button) => {
+    const key = button.dataset.manualPack;
+    const pack = MANUAL_PACKS[key];
+    if (!pack) return;
+
+    let available = false;
+
+    try {
+      const response = await fetch(
+        `${pack.path}?availability-check=${Date.now()}`,
+        { method: "HEAD", cache: "no-store" }
+      );
+      available = response.ok;
+    } catch {
+      available = false;
+    }
+
+    setManualPackState(button, pack, available);
+
+    if (!available) {
+      button.addEventListener("click", (event) => event.preventDefault());
+    }
+  }));
+}
+
+initializeManualPackDownloads();
+
+/* ===== Copy server IP ===== */
+
+document.querySelectorAll("[data-copy-server]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const previous = button.textContent;
+
+    try {
+      await navigator.clipboard.writeText(SERVER_ADDRESS);
+      button.textContent = "Kopiert ✓";
+    } catch {
+      button.textContent = SERVER_ADDRESS;
+    }
+
+    window.setTimeout(() => {
+      button.textContent = previous;
+    }, 1600);
+  });
+});
+
 
 /* ===== Robust, seamless marquee ===== */
 
