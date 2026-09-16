@@ -1,12 +1,12 @@
 const LAUNCHER_PATH = "downloads/LeipzigCraft-Launcher.exe";
 const MANUAL_PACKS = {
   performance: {
-    path: "downloads/LeipzigCraft-Manuell-Performance.zip",
+    path: "https://github.com/deinVater94/Leipzigcraft/releases/download/manual-v1.0/LeipzigCraft-Manuell-Performance.zip",
     readyText: "⬇ Performance herunterladen",
     missingText: "Performance folgt"
   },
   "high-quality": {
-    path: "downloads/LeipzigCraft-Manuell-HighQuality.zip",
+    path: "https://github.com/deinVater94/Leipzigcraft/releases/download/manual-v1.0/LeipzigCraft-Manuell-HighQuality.zip",
     readyText: "⬇ High Quality herunterladen",
     missingText: "High Quality folgt"
   }
@@ -201,32 +201,22 @@ function setManualPackState(button, pack, available) {
   button.textContent = pack.missingText;
 }
 
-async function initializeManualPackDownloads() {
+function initializeManualPackDownloads() {
   if (!manualPackButtons.length) return;
 
-  await Promise.all([...manualPackButtons].map(async (button) => {
+  manualPackButtons.forEach((button) => {
     const key = button.dataset.manualPack;
     const pack = MANUAL_PACKS[key];
     if (!pack) return;
 
-    let available = false;
-
-    try {
-      const response = await fetch(
-        `${pack.path}?availability-check=${Date.now()}`,
-        { method: "HEAD", cache: "no-store" }
-      );
-      available = response.ok;
-    } catch {
-      available = false;
-    }
-
-    setManualPackState(button, pack, available);
-
-    if (!available) {
-      button.addEventListener("click", (event) => event.preventDefault());
-    }
-  }));
+    // GitHub Release assets are cross-origin. A browser HEAD/CORS check can
+    // incorrectly report them as unavailable, so published release URLs are
+    // enabled directly.
+    setManualPackState(button, pack, true);
+    button.removeAttribute("download");
+    button.setAttribute("target", "_blank");
+    button.setAttribute("rel", "noopener noreferrer");
+  });
 }
 
 initializeManualPackDownloads();
