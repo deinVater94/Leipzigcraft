@@ -172,12 +172,40 @@ document.querySelectorAll("[data-video-shell]").forEach((shell) => {
   const video = shell.querySelector("video");
   if (!video) return;
 
+  // Muted autoplay is allowed by modern browsers.
+  // Keep controls enabled so visitors can unmute manually.
+  video.muted = true;
+  video.defaultMuted = true;
+  video.autoplay = true;
+  video.playsInline = true;
+
+  video.setAttribute("muted", "");
+  video.setAttribute("autoplay", "");
+  video.setAttribute("playsinline", "");
+
   const markReady = () => shell.classList.add("has-video");
+
+  const tryAutoplay = () => {
+    video.muted = true;
+    const playPromise = video.play();
+
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {
+        // Browser policy or unavailable video: controls remain usable.
+      });
+    }
+  };
 
   if (video.readyState >= 1) {
     markReady();
   } else {
     video.addEventListener("loadedmetadata", markReady, { once: true });
+  }
+
+  if (video.readyState >= 2) {
+    tryAutoplay();
+  } else {
+    video.addEventListener("canplay", tryAutoplay, { once: true });
   }
 });
 

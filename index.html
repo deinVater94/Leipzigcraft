@@ -102,10 +102,12 @@
 
         <div class="world-preview trailer-preview" data-video-shell>
           <video
-            class="site-video trailer-video"
+            autoplay
+              muted
+              class="site-video trailer-video"
             controls
             playsinline
-            preload="metadata"
+            preload="auto"
             aria-label="LeipzigCraft Servertrailer"
           >
             <source src="assets/videos/server-trailer.mp4" type="video/mp4">
@@ -289,10 +291,12 @@
         <div class="manual-setup-grid">
           <div class="manual-video-shell" data-video-shell>
             <video
+              autoplay
+              muted
               class="site-video manual-video"
               controls
               playsinline
-              preload="metadata"
+              preload="auto"
               aria-label="LeipzigCraft manuelle Installation Schritt für Schritt"
             >
               <source src="assets/videos/manual-setup.mp4" type="video/mp4">
@@ -402,6 +406,6 @@
     <p class="copyright">© <span id="year"></span> LeipzigCraft</p>
   </footer>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
