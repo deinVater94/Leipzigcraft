@@ -177,10 +177,12 @@ document.querySelectorAll("[data-video-shell]").forEach((shell) => {
   video.muted = true;
   video.defaultMuted = true;
   video.autoplay = true;
+  video.loop = true;
   video.playsInline = true;
 
   video.setAttribute("muted", "");
   video.setAttribute("autoplay", "");
+  video.setAttribute("loop", "");
   video.setAttribute("playsinline", "");
 
   const markReady = () => shell.classList.add("has-video");
