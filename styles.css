@@ -147,7 +147,7 @@ button { font: inherit; }
   overflow: hidden;
   min-height: 760px;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(430px, .95fr);
   align-items: center;
   gap: clamp(40px, 6vw, 100px);
   padding: 90px clamp(22px, 6vw, 110px);
@@ -327,7 +327,7 @@ button { font: inherit; }
 .hero-meta span:last-child { border-right: 0; }
 
 .hero-card {
-  width: min(100%, 520px);
+  width: min(100%, 780px);
   justify-self: center;
   padding: 24px;
   background: #1c1e19;
@@ -710,6 +710,9 @@ button { font: inherit; }
 .trailer-preview {
   display: grid;
   place-items: center;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 1920 / 850;
   background:
     radial-gradient(circle at 50% 40%, rgba(121,198,75,.14), transparent 42%),
     #090b08;
@@ -718,6 +721,9 @@ button { font: inherit; }
 .trailer-video {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   opacity: 0;
   transition: opacity .2s ease;
 }
@@ -1022,7 +1028,7 @@ button { font: inherit; }
 
   .hero { grid-template-columns: 1fr; }
 
-  .hero-card {
+ .hero-card {
     width: min(100%, 700px);
     justify-self: start;
   }
