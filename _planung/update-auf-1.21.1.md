@@ -22,7 +22,7 @@ Der Plan ist so geschrieben, dass ihn jeder lesen kann (wir, der Repo-Besitzer, 
 ## 2. Warum lohnt sich das
 
 - **Die Kette der Dialog-/Quest-Arbeit** sitzt auf CustomNPCs. Die neueren Builds bringen laut Changelog: das moderne Dialog-System (03.11.2025), Script-GUIs, die auf dem Server wieder öffnen (29.11.2025), einen Memory-Leak-Fix (24.01.2026) und Fixes für NPCs, die sich nach einem Chunk-Reset nicht mehr ändern lassen. Das letzte ist unser bekannter Fehler „platzierte NPCs lassen sich nicht mehr ändern“.
-- **FIW Bosses** (Boss-Raids, 12) läuft nur ab 1.21.1.
+- **FIW Bosses** (Boss-Raids) läuft nur ab 1.21.1.
 - **Aktuelle Fabric API** (0.116.17 vom 01.09.2026) statt einer Version von 2024.
 - Wir müssen die zwei vorhandenen Quest-Ketten nicht auf einer alten Version flicken und danach nochmal anfassen. Es sind nur zwei Ketten, ein Neubau wäre also kein Drama.
 
