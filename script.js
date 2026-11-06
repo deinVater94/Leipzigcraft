@@ -1,12 +1,12 @@
 const LAUNCHER_PATH = "downloads/LeipzigCraft-Launcher.exe";
 const MANUAL_PACKS = {
   performance: {
-    path: "https://github.com/deinVater94/Leipzigcraft/releases/download/manual-v1.0/LeipzigCraft-Manuell-Performance.zip",
+    path: "https://github.com/deinVater94/Leipzigcraft/releases/download/manual-v1.1/LeipzigCraft-Manuell-Performance.zip",
     readyText: "⬇ Performance herunterladen",
     missingText: "Performance folgt"
   },
   "high-quality": {
-    path: "https://github.com/deinVater94/Leipzigcraft/releases/download/manual-v1.0/LeipzigCraft-Manuell-HighQuality.zip",
+    path: "https://github.com/deinVater94/Leipzigcraft/releases/download/manual-v1.1/LeipzigCraft-Manuell-HighQuality.zip",
     readyText: "⬇ High Quality herunterladen",
     missingText: "High Quality folgt"
   }
